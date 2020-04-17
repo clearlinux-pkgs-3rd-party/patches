@@ -1,0 +1,31 @@
+diff -Nru zoomuntouched/opt/zoom/qt.conf zoom/opt/zoom/qt.conf
+--- zoomuntouched/opt/zoom/qt.conf	2020-04-13 12:31:10.526095492 +0200
++++ zoom/opt/zoom/qt.conf	2020-04-13 12:34:04.886562084 +0200
+@@ -1,3 +1,3 @@
+ [Paths]
+-Prefix=/opt/zoom
++Prefix=/opt/3rd-party/bundles/greginator/opt/zoom
+ 
+diff -Nru zoomuntouched/opt/zoom/zoomlinux zoom/opt/zoom/zoomlinux
+--- zoomuntouched/opt/zoom/zoomlinux	2020-04-13 12:31:11.752091771 +0200
++++ zoom/opt/zoom/zoomlinux	2020-04-13 12:34:04.886562084 +0200
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+ 
+-ZOOM_PATH="/opt/zoom/ZoomLauncher"
++ZOOM_PATH="/opt/3rd-party/bundles/greginator/opt/zoom/ZoomLauncher"
+ ZOOM_LOGS="$HOME/.zoom/logs"
+ 
+ mkdir -p $ZOOM_LOGS
+diff -Nru zoomuntouched/usr/share/applications/Zoom.desktop zoom/usr/share/applications/Zoom.desktop
+--- zoomuntouched/usr/share/applications/Zoom.desktop	2020-04-13 12:31:11.753091768 +0200
++++ zoom/usr/share/applications/Zoom.desktop	2020-04-13 12:32:45.560805779 +0200
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Zoom
+ Comment=Zoom Video Conference
+-Exec=/usr/bin/zoom %U
++Exec=/opt/3rd-party/bin/zoom %U
+ Icon=Zoom.png
+ Terminal=false
+ Type=Application

@@ -1,0 +1,203 @@
+diff -Nru a/opt/teamviewer/tv_bin/desktop/com.teamviewer.TeamViewer.desktop b/opt/teamviewer/tv_bin/desktop/com.teamviewer.TeamViewer.desktop
+--- a/opt/teamviewer/tv_bin/desktop/com.teamviewer.TeamViewer.desktop	2020-04-14 14:24:57.862006510 +0200
++++ b/opt/teamviewer/tv_bin/desktop/com.teamviewer.TeamViewer.desktop	2020-04-14 14:30:05.419746398 +0200
+@@ -6,6 +6,6 @@
+ 
+ Name=TeamViewer
+ Comment=Remote control and meeting solution.
+-Exec=/opt/teamviewer/tv_bin/script/teamviewer
++Exec=/opt/3rd-party/bin/teamviewer
+ 
+ Icon=TeamViewer
+diff -Nru a/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.Desktop.service b/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.Desktop.service
+--- a/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.Desktop.service	2020-04-14 14:24:57.999006301 +0200
++++ b/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.Desktop.service	2020-04-14 14:30:01.051749697 +0200
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=com.teamviewer.TeamViewer.Desktop
+-Exec=/opt/teamviewer/tv_bin/TeamViewer_Desktop
++Exec=/opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/TeamViewer_Desktop
+diff -Nru a/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.policy b/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.policy
+--- a/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.policy	2020-04-14 14:24:57.999006301 +0200
++++ b/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.policy	2020-04-14 14:30:01.051749697 +0200
+@@ -23,7 +23,7 @@
+       <allow_inactive>auth_admin</allow_inactive>
+       <allow_active>auth_admin</allow_active>
+     </defaults>
+-    <annotate key="org.freedesktop.policykit.exec.path">/opt/teamviewer/tv_bin/script/execscript</annotate>
++    <annotate key="org.freedesktop.policykit.exec.path">/opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/script/execscript</annotate>
+     <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+   </action>
+ </policyconfig>
+diff -Nru a/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.service b/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.service
+--- a/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.service	2020-04-14 14:24:57.999006301 +0200
++++ b/opt/teamviewer/tv_bin/script/com.teamviewer.TeamViewer.service	2020-04-14 14:30:01.051749697 +0200
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=com.teamviewer.TeamViewer
+-Exec=/opt/teamviewer/tv_bin/TeamViewer
++Exec=/opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/TeamViewer
+diff -Nru a/opt/teamviewer/tv_bin/script/teamviewerd.DEB.conf b/opt/teamviewer/tv_bin/script/teamviewerd.DEB.conf
+--- a/opt/teamviewer/tv_bin/script/teamviewerd.DEB.conf	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/teamviewerd.DEB.conf	2020-04-14 14:30:01.051749697 +0200
+@@ -1,6 +1,6 @@
+ description "TeamViewer remote control daemon"
+ 
+-exec /opt/teamviewer/tv_bin/teamviewerd -f
++exec /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/teamviewerd -f
+ 
+ start on (runlevel [2])
+ 
+@@ -9,4 +9,4 @@
+ respawn 
+ respawn limit 5 60
+ 
+-pre-start exec /opt/teamviewer/tv_bin/script/tv-delayed-start.sh
++pre-start exec /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/script/tv-delayed-start.sh
+diff -Nru a/opt/teamviewer/tv_bin/script/teamviewerd.RHEL.conf b/opt/teamviewer/tv_bin/script/teamviewerd.RHEL.conf
+--- a/opt/teamviewer/tv_bin/script/teamviewerd.RHEL.conf	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/teamviewerd.RHEL.conf	2020-04-14 14:30:01.051749697 +0200
+@@ -1,6 +1,6 @@
+ description "TeamViewer remote control daemon"
+ 
+-exec /opt/teamviewer/tv_bin/teamviewerd -f
++exec /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/teamviewerd -f
+ 
+ start on (started dbus or started messagebus)
+ 
+@@ -9,4 +9,4 @@
+ respawn 
+ respawn limit 5 60
+ 
+-pre-start exec /opt/teamviewer/tv_bin/script/tv-delayed-start.sh
++pre-start exec /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/script/tv-delayed-start.sh
+diff -Nru a/opt/teamviewer/tv_bin/script/teamviewerd.RPM.conf b/opt/teamviewer/tv_bin/script/teamviewerd.RPM.conf
+--- a/opt/teamviewer/tv_bin/script/teamviewerd.RPM.conf	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/teamviewerd.RPM.conf	2020-04-14 14:30:01.051749697 +0200
+@@ -1,6 +1,6 @@
+ description "TeamViewer remote control daemon"
+ 
+-exec /opt/teamviewer/tv_bin/teamviewerd -f
++exec /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/teamviewerd -f
+ 
+ start on (runlevel [5])
+ 
+@@ -9,4 +9,4 @@
+ respawn 
+ respawn limit 5 60
+ 
+-pre-start exec /opt/teamviewer/tv_bin/script/tv-delayed-start.sh
++pre-start exec /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/script/tv-delayed-start.sh
+diff -Nru a/opt/teamviewer/tv_bin/script/teamviewerd.service b/opt/teamviewer/tv_bin/script/teamviewerd.service
+--- a/opt/teamviewer/tv_bin/script/teamviewerd.service	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/teamviewerd.service	2020-04-14 14:30:01.051749697 +0200
+@@ -7,7 +7,7 @@
+ [Service]
+ Type = forking
+ PIDFile = /var/run/teamviewerd.pid
+-ExecStart = /opt/teamviewer/tv_bin/teamviewerd -d
++ExecStart = /opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/teamviewerd -d
+ Restart = on-abort
+ StartLimitInterval = 60
+ StartLimitBurst = 10
+diff -Nru a/opt/teamviewer/tv_bin/script/teamviewerd.sysv b/opt/teamviewer/tv_bin/script/teamviewerd.sysv
+--- a/opt/teamviewer/tv_bin/script/teamviewerd.sysv	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/teamviewerd.sysv	2020-04-14 14:30:01.051749697 +0200
+@@ -21,7 +21,7 @@
+ 
+ RETVAL=0
+ prog="teamviewerd"
+-prog_dir="/opt/teamviewer/tv_bin"
++prog_dir="/opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin"
+ prog_path="$prog_dir/$prog"
+ prog_args="-d"
+ pidfile="/var/run/teamviewerd.pid"
+diff -Nru a/opt/teamviewer/tv_bin/script/teamviewer_setup b/opt/teamviewer/tv_bin/script/teamviewer_setup
+--- a/opt/teamviewer/tv_bin/script/teamviewer_setup	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/teamviewer_setup	2020-04-14 14:30:01.051749697 +0200
+@@ -586,8 +586,8 @@
+ 
+ function RenameOldDirs()
+ {
+-  MoveDir    '/opt/teamviewer/config'   || Rdie 'fail (RenameOldDirs)'
+-  MoveDir    '/opt/teamviewer/logfiles' || Rdie 'fail (RenameOldDirs)'
++  MoveDir    '/opt/3rd-party/bundles/greginator/opt/teamviewer/config'   || Rdie 'fail (RenameOldDirs)'
++  MoveDir    '/opt/3rd-party/bundles/greginator/opt/teamviewer/logfiles' || Rdie 'fail (RenameOldDirs)'
+   RemoveLink '/etc/teamviewer'          || Rdie 'fail (RenameOldDirs)'
+ }
+ 
+diff -Nru a/opt/teamviewer/tv_bin/script/tvw_config b/opt/teamviewer/tv_bin/script/tvw_config
+--- a/opt/teamviewer/tv_bin/script/tvw_config	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/tvw_config	2020-04-14 14:30:01.051749697 +0200
+@@ -17,7 +17,7 @@
+   TV_DESKTOP_FILE="$TV_BIN_DIR/desktop/com.teamviewer.TeamViewer.desktop"
+   TV_INSTALL_LOG="$TV_BASE_DIR/logfiles/install_teamviewerd.log"
+ 
+-  TV_REMOTE_MANAGEMENT_DIR="/opt/teamviewer-rm"
++  TV_REMOTE_MANAGEMENT_DIR="/opt/3rd-party/bundles/greginator/opt/teamviewer-rm"
+ else
+   TV_PROFILE="$TV_BASE_DIR/profile"
+   TV_LOG_DIR="$TV_BASE_DIR/logfiles"
+@@ -32,7 +32,7 @@
+ fi
+ 
+ if isTarPackage; then  # used in setup_teamviewer (tar.xz)
+-  TV_INSTALL_BASE_DIR=/opt/teamviewer
++  TV_INSTALL_BASE_DIR=/opt/3rd-party/bundles/greginator/opt/teamviewer
+   TV_TARIN_LOGDIR="$TV_INSTALL_BASE_DIR/logfiles"
+   TV_INSTALL_LOG="$TV_TARIN_LOGDIR/install_teamviewerd.log"
+ fi
+diff -Nru a/opt/teamviewer/tv_bin/script/tvw_daemon b/opt/teamviewer/tv_bin/script/tvw_daemon
+--- a/opt/teamviewer/tv_bin/script/tvw_daemon	2020-04-14 14:24:58.000006299 +0200
++++ b/opt/teamviewer/tv_bin/script/tvw_daemon	2020-04-14 14:30:01.051749697 +0200
+@@ -64,7 +64,7 @@
+ 
+ function detectUpstart
+ {
+-  local forcesysv='/opt/teamviewer/config/systemv'
++  local forcesysv='/opt/3rd-party/bundles/greginator/opt/teamviewer/config/systemv'
+   [ -f $forcesysv ]	&& return 1	# override detection
+   cmdExists initctl	|| return 1	# no root required
+   isSuperUser		|| return 0	# if root, check more
+@@ -76,7 +76,7 @@
+ 
+ function detectSystemD
+ {
+-  local forcesysv='/opt/teamviewer/config/systemv'
++  local forcesysv='/opt/3rd-party/bundles/greginator/opt/teamviewer/config/systemv'
+   [ -f $forcesysv ]	&& return 1	# override detection
+   cmdExists systemctl	|| return 1	# no root required
+   isSuperUser		|| return 0	# if root, check more
+diff -Nru a/opt/teamviewer/tv_bin/script/tvw_profile b/opt/teamviewer/tv_bin/script/tvw_profile
+--- a/opt/teamviewer/tv_bin/script/tvw_profile	2020-04-14 14:24:58.002006296 +0200
++++ b/opt/teamviewer/tv_bin/script/tvw_profile	2020-04-14 14:30:01.051749697 +0200
+@@ -74,7 +74,7 @@
+   local conftype="$1"
+   local globalConf="$TV_BASE_DIR/config/global.conf"
+   local clientConf="$TV_CFG_DIR/client.conf"
+-  local globalConfOld='/opt/teamviewer9/config/global.conf'
++  local globalConfOld='/opt/3rd-party/bundles/greginator/opt/teamviewer9/config/global.conf'
+   local copy='n'
+   local oldpath
+   local newpath
+@@ -102,7 +102,7 @@
+ function ImportTV10Settings()
+ {
+   local newpath="$TV_BASE_DIR/config/global.conf"
+-  local oldpath='/opt/teamviewer/config.old/global.conf'
++  local oldpath='/opt/3rd-party/bundles/greginator/opt/teamviewer/config.old/global.conf'
+ 
+   [ -f "$oldpath" ] || return 1		# need old file
+   [ -f "$newpath" ] && return 1		# don't overwrite existing settings
+diff -Nru a/opt/teamviewer/tv_bin/script/tvw_update b/opt/teamviewer/tv_bin/script/tvw_update
+--- a/opt/teamviewer/tv_bin/script/tvw_update	2020-04-14 14:24:58.002006296 +0200
++++ b/opt/teamviewer/tv_bin/script/tvw_update	2020-04-14 14:30:01.051749697 +0200
+@@ -34,7 +34,7 @@
+   local param="$2" # unused
+ 
+   local stableStr=
+-  local default='/opt/teamviewer/tv_bin/script/teamviewer.list'
++  local default='/opt/3rd-party/bundles/greginator/opt/teamviewer/tv_bin/script/teamviewer.list'
+   local repoFile='/etc/apt/sources.list.d/teamviewer.list'
+ 
+   hasRepository || return 0

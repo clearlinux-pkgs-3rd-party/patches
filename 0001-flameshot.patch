@@ -1,0 +1,34 @@
+diff -Nru flameshot-untouched/usr/share/applications/flameshot.desktop flameshot/usr/share/applications/flameshot.desktop
+--- flameshot-untouched/usr/share/applications/flameshot.desktop	2020-04-14 14:10:09.995365000 +0200
++++ flameshot/usr/share/applications/flameshot.desktop	2020-04-14 14:11:41.691224732 +0200
+@@ -12,7 +12,7 @@
+ Keywords=flameshot;screenshot;capture;shutter;
+ Keywords[zh_CN]=flameshot;screenshot;capture;shutter;截图;屏幕;
+ Keywords[fr]=flameshot;capture d'écran;capter;shutter;
+-Exec=flameshot
++Exec=/opt/3rd-party/bin/flameshot
+ Icon=flameshot
+ Terminal=false
+ Type=Application
+@@ -25,11 +25,11 @@
+ Name[zh_CN]=配置
+ Name[pl]=Konfiguruj
+ Name[fr]=Configurer
+-Exec=flameshot config
++Exec=/opt/3rd-party/bin/flameshot config
+ 
+ [Desktop Action Capture]
+ Name=Take screenshot
+ Name[zh_CN]=进行截图
+ Name[pl]=Zrzut ekranu
+ Name[fr]=Prendre une capture d'écran
+-Exec=flameshot gui --delay 500
++Exec=/opt/3rd-party/bin/flameshot gui --delay 500
+diff -Nru flameshot-untouched/usr/share/dbus-1/services/org.dharkael.Flameshot.service flameshot/usr/share/dbus-1/services/org.dharkael.Flameshot.service
+--- flameshot-untouched/usr/share/dbus-1/services/org.dharkael.Flameshot.service	2020-04-14 14:10:09.995365000 +0200
++++ flameshot/usr/share/dbus-1/services/org.dharkael.Flameshot.service	2020-04-14 14:11:12.481269686 +0200
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=org.dharkael.Flameshot
+-Exec=/usr/bin/flameshot
++Exec=/opt/3rd-party/bin/flameshot

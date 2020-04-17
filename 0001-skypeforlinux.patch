@@ -1,0 +1,29 @@
+diff -Nru skypeforlinux-untouched/usr/share/applications/skypeforlinux.desktop skypeforlinux/usr/share/applications/skypeforlinux.desktop
+--- skypeforlinux-untouched/usr/share/applications/skypeforlinux.desktop	2020-04-13 12:23:27.395453238 +0200
++++ skypeforlinux/usr/share/applications/skypeforlinux.desktop	2020-04-13 12:25:30.721103211 +0200
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Skype
+ Comment=Skype Internet Telephony
+-Exec=/usr/bin/skypeforlinux %U
++Exec=/opt/3rd-party/bin/skypeforlinux %U
+ Icon=skypeforlinux
+ Terminal=false
+ Type=Application
+@@ -55,6 +55,6 @@
+ Name[vi]=Thoát Skype
+ Name[zh_CN]=退出 Skype
+ Name[zh_TW]=結束 Skype
+-Exec=/usr/bin/skypeforlinux --shutdown
++Exec=/opt/3rd-party/bin/skypeforlinux --shutdown
+ OnlyShowIn=Unity;
+ 
+diff -Nru skypeforlinux-untouched/usr/share/kservices5/ServiceMenus/skypeforlinux.desktop skypeforlinux/usr/share/kservices5/ServiceMenus/skypeforlinux.desktop
+--- skypeforlinux-untouched/usr/share/kservices5/ServiceMenus/skypeforlinux.desktop	2020-04-13 12:23:27.400453224 +0200
++++ skypeforlinux/usr/share/kservices5/ServiceMenus/skypeforlinux.desktop	2020-04-13 12:25:30.721103211 +0200
+@@ -51,4 +51,4 @@
+ Name[zh_CN]=Skype − 已注销。
+ Name[zh_HK]=使用 Skype 共享
+ Name[zh_TW]=使用 Skype 分享
+-Exec=/usr/bin/skypeforlinux --share-file %F
++Exec=/opt/3rd-party/bin/skypeforlinux --share-file %F

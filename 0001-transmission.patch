@@ -1,0 +1,27 @@
+diff -Nru transmission-untouched/usr/share/applications/transmission-gtk.desktop transmission/usr/share/applications/transmission-gtk.desktop
+--- transmission-untouched/usr/share/applications/transmission-gtk.desktop	2020-04-14 10:54:55.097300000 +0200
++++ transmission/usr/share/applications/transmission-gtk.desktop	2020-04-14 11:39:34.881998047 +0200
+@@ -257,10 +257,10 @@
+ Comment[vi]=Tải và chia sẻ tập tin qua BitTorrent
+ Comment[zh_CN]=通过 BitTorrent 下载和共享文件
+ Comment[zh_TW]=透過 BitTorrent 協定來下載和分享檔案
+-Exec=transmission-gtk %U
++Exec=/opt/3rd-party/bin/transmission-gtk %U
+ Icon=transmission
+ Terminal=false
+-TryExec=transmission-gtk
++TryExec=/opt/3rd-party/bin/transmission-gtk
+ Type=Application
+ StartupNotify=true
+ MimeType=application/x-bittorrent;x-scheme-handler/magnet;
+@@ -271,8 +271,8 @@
+ 
+ [Desktop Action Pause]
+ Name=Start Transmission with All Torrents Paused
+-Exec=transmission-gtk --paused
++Exec=/opt/3rd-party/bin/transmission-gtk --paused
+ 
+ [Desktop Action Minimize]
+ Name=Start Transmission Minimized
+-Exec=transmission-gtk --minimized
++Exec=/opt/3rd-party/bin/transmission-gtk --minimized

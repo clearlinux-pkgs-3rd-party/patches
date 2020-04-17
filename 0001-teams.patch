@@ -1,0 +1,19 @@
+diff -Nru teamsuntouched/usr/share/applications/teams.desktop teams/usr/share/applications/teams.desktop
+--- teamsuntouched/usr/share/applications/teams.desktop	2020-04-13 12:27:29.254757814 +0200
++++ teams/usr/share/applications/teams.desktop	2020-04-13 12:28:38.243553477 +0200
+@@ -3,7 +3,7 @@
+ Type=Application
+ Name=Microsoft Teams - Preview
+ Comment=Microsoft Teams for Linux is your chat-centered workspace in Office 365.
+-Exec=/usr/bin/teams %U
++Exec=/opt/3rd-party/bin/teams %U
+ Icon=teams
+ Terminal=false
+ StartupNotify=true
+@@ -55,5 +55,5 @@
+ Name[vi]=Thoát Teams
+ Name[zh_CN]=退出 Teams
+ Name[zh_TW]=結束 Teams
+-Exec=/usr/bin/teams --quit
++Exec=/opt/3rd-party/bin/teams --quit
+ OnlyShowIn=Unity;

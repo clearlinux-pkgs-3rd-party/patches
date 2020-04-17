@@ -1,0 +1,43 @@
+diff -Nru codeuntouched/usr/share/applications/code.desktop code/usr/share/applications/code.desktop
+--- codeuntouched/usr/share/applications/code.desktop	2020-04-13 12:09:48.661252341 +0200
++++ code/usr/share/applications/code.desktop	2020-04-13 12:06:14.683403567 +0200
+@@ -2,7 +2,7 @@
+ Name=Visual Studio Code
+ Comment=Code Editing. Redefined.
+ GenericName=Text Editor
+-Exec=/usr/share/code/code --no-sandbox --unity-launch %F
++Exec=/opt/3rd-party/bin/code --no-sandbox --unity-launch %F
+ Icon=com.visualstudio.code
+ Type=Application
+ StartupNotify=false
+@@ -14,5 +14,5 @@
+ 
+ [Desktop Action new-empty-window]
+ Name=New Empty Window
+-Exec=/usr/share/code/code --no-sandbox --new-window %F
++Exec=/opt/3rd-party/bin/code --no-sandbox --new-window %F
+ Icon=com.visualstudio.code
+diff -Nru codeuntouched/usr/share/applications/code-url-handler.desktop code/usr/share/applications/code-url-handler.desktop
+--- codeuntouched/usr/share/applications/code-url-handler.desktop	2020-04-13 12:09:48.661252341 +0200
++++ code/usr/share/applications/code-url-handler.desktop	2020-04-13 12:06:14.683403567 +0200
+@@ -2,7 +2,7 @@
+ Name=Visual Studio Code - URL Handler
+ Comment=Code Editing. Redefined.
+ GenericName=Text Editor
+-Exec=/usr/share/code/code --no-sandbox --open-url %U
++Exec=/opt/3rd-party/bin/code --no-sandbox --open-url %U
+ Icon=com.visualstudio.code
+ Type=Application
+ NoDisplay=true
+diff -Nru codeuntouched/usr/share/code/bin/code code/usr/share/code/bin/code
+--- codeuntouched/usr/share/code/bin/code	2020-04-13 12:09:48.661252341 +0200
++++ code/usr/share/code/bin/code	2020-04-13 12:07:21.883380641 +0200
+@@ -35,7 +35,7 @@
+ 		VSCODE_PATH="$(dirname $(readlink -f $0))/.."
+ 	else
+ 		# else use the standard install location
+-		VSCODE_PATH="/usr/share/code"
++		VSCODE_PATH="/opt/3rd-party/bundles/greginator/usr/share/code"
+ 	fi
+ fi
+ 
